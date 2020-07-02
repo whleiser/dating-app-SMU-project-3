@@ -5,7 +5,7 @@ const controller = require('../controllers/userController');
 
 // API Routes
 router.use("/api", apiRoutes);
-router.use("/api/user", controller);
+router.use("/api/users", controller);
 
 // If no API routes are hit, send the React app
 router.use(function(req, res) {

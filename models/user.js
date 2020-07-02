@@ -15,10 +15,18 @@ module.exports = (sequelize, DataTypes) => {
   };
   User.init({
     name: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    age: DataTypes.INTEGER,
+    bio: DataTypes.STRING,
+    hobbiesInterests: DataTypes.STRING,
+    male: DataTypes.BOOLEAN,
+    female: DataTypes.BOOLEAN,
+    interestMale: DataTypes.BOOLEAN,
+    interestFemale: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'User',
   });
+  User.belongsToMany(User, { as: 'Children', through: 'Matches' });
   return User;
 };

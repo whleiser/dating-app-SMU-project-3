@@ -12,11 +12,13 @@ import CreateProfile from './pages/CreateProfile';
 function App() {
   return (
     <ThemeProvider>
-       <Router>
-      <div>
+    <div>
         <Header>
+        </Header>
+       <Router>
         <Switch>
           <Route exact path={["/", "/home"]}>
+          <AboutBody></AboutBody>
           </Route>
           <Route exact path="/update">
             <UpdateProfile />
@@ -31,14 +33,10 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
-        </Header>
-      </div>
     </Router>
-    <div>
-    <AboutBody></AboutBody>
     <Footer></Footer>
     </div>
-    </ThemeProvider>
+   </ThemeProvider>
    
   );
 }

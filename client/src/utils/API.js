@@ -16,5 +16,9 @@ export default {
   // Saves a book to the database
   saveMatch: function(matchData) {
     return axios.post("/api/matches", matchData);
+  },
+
+  getUsers: function() {
+    return axios.get("/api/users");
   }
 };
