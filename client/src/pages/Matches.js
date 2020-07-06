@@ -18,7 +18,7 @@ function Matches(){
       };
     return (
         <div>
-        {users.map(user => <DatingCard user = {user} />)}
+        {users.map(user => <DatingCard user = {user} image = './image-assets/profile-2398782_640.png'/>)}
         </div>
     );
 }

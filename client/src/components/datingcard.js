@@ -2,21 +2,36 @@ import React from 'react'
 import {
   Card,
   Text,
-  Flex,
-  Image
+  Image,
+  Box,
+  Heading
 } from 'rebass'
 
 function DatingCard(props){
 return(
-<Flex>
-  <Card width={[ 256, 320 ]} mx='auto'>
-    <Image src='https://source.unsplash.com/random/512x384?space' />
-    <Text> 
-      {props.user.name}
-      {props.user.bio} 
-    </Text>
-  </Card>
-</Flex>
+<Box width={[1, .8]}>
+<Card
+      sx={{
+        p: 1,
+        borderRadius: 2,
+        boxShadow: '0 0 16px rgba(0, 0, 0, .25)',
+      }}>
+      <Image src={props.image} 
+      sx={{
+      width: [ '50%', '25%' ],
+      height: [ '50%', '25%' ],
+      borderRadius: 8,
+      }} />
+      <Box px={2}>
+        <Heading as='h3'>
+          {props.user.name}
+        </Heading>
+        <Text fontSize={0}>
+          {props.user.bio}
+        </Text>
+      </Box>
+    </Card>
+</Box>
 
 );
 }

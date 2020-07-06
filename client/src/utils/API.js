@@ -20,5 +20,18 @@ export default {
 
   getUsers: function() {
     return axios.get("/api/users");
+  },
+
+  logIn: function(userData) {
+    return axios.post("/api/user/login", userData);
+  },
+  signUp: function(userData) {
+    return axios.post("/api/user/signup", userData);
+  },
+  logOut: function() {
+    return axios.get("/api/user/logout");
+  },
+  userData: function() {
+    return axios.get("/api/user/user_data");
   }
 };

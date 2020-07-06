@@ -1,6 +1,8 @@
 const express = require("express");
 const routes = require("./routes");
 const app = express();
+const session = require("express-session");
+const passport = require("./config/passport");
 const PORT = process.env.PORT || 3001;
 var db = require("./models");
 
@@ -12,6 +14,11 @@ app.use(express.json());
 //   app.use(express.static("client/build"));
 // }
 // Add routes, both API and view
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(routes);
 

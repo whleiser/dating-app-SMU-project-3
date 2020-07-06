@@ -8,6 +8,7 @@ import AboutBody from './components/aboutbody';
 import Matches from './pages/Matches';
 import UpdateProfile from './pages/UpdateProfile';
 import CreateProfile from './pages/CreateProfile';
+import Login from './pages/Login'
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route exact path="/matches">
             <Matches />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route>
             <NoMatch />
