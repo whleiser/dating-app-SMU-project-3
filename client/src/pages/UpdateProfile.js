@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import API from "../utils/API";
 import DatingCard from '../components/datingcard';
+import ProfileForm from '../components/profileform';
 import {
-  Text,
+  Heading,
   Flex,
   Box
 } from 'rebass';
@@ -22,21 +23,13 @@ function UpdateProfile(props) {
   
     return (
       <div>
-        <Flex alignItems='center'>
-          <Box width={1/3} px={2}>
-            <Text p={1} color='background' bg='primary'>
-              {match.name}
-            </Text>
-          </Box>
-        </Flex>
-        <Box
-            sx={{
-            maxWidth: 512,
-            mx: 'auto',
-            px: 3,
-        }}>
-        {/* <DatingCard {match}></DatingCard> */}
-        </Box>
+     <Heading
+  fontSize={[ 5, 6, 7 ]}
+  color='primary'>
+  View and Update your LinkUp Profile
+</Heading>
+<DatingCard></DatingCard>
+        <ProfileForm></ProfileForm>
         </div>
       );
     }

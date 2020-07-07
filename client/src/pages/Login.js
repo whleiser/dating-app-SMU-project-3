@@ -4,16 +4,20 @@ import {
   Text,
   Box
 } from 'rebass';
+import { useHistory } from "react-router-dom";
 
 
-function Login() {
+
+function Login({setUser}) {
+    let history = useHistory();
     const emailInput = useRef("");
     const passwordInput = useRef("");
     function login (event) {
         console.log(emailInput.current.value);
         console.log(passwordInput.current.value);
-        API.logIn({email: emailInput.current.value, password: passwordInput.current.value})
-        .then(data => console.log(data))
+         API.logIn({email: emailInput.current.value, password: passwordInput.current.value})
+         .then(response => {history.push("/matches")
+        setUser(response.data)})
         event.preventDefault()  
     }
   return (

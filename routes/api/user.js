@@ -12,7 +12,15 @@ const passport = require("../../config/passport");
     console.log(req.user);
     res.json({
       email: req.user.email,
-      id: req.user.id
+      id: req.user.id,
+      name: req.user.name,
+      age: req.user.age,
+      bio: req.user.bio,
+      hobbies: req.user.hobbies,
+      male: req.user.male,
+      female: req.user.female,
+      interestMale: req.user.interestMale,
+      interestFemale: req.user.interestFemale
     });
   });
 
@@ -22,10 +30,10 @@ const passport = require("../../config/passport");
   router.post("/signup", (req, res) => {
     db.User.create(req.body)
       .then(() => {
-        res.redirect(307, "/login");
+        res.send(200);
       })
       .catch(err => {
-        res.status(401).json(err);
+        res.status(500).json(err);
       });
   });
 

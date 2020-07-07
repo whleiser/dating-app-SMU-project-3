@@ -2,15 +2,15 @@ import React, {useState, useEffect} from "react";
 import DatingCard from '../components/datingcard';
 import API from "../utils/API";
 
-function Matches(){
+function Matches({user}){
     const [users, setUsers] = useState([])
     useEffect(() => {
     loadUsers()
       }, [])
     
-      // Loads all books and sets them to books
+      // Loads all users and sets them to users
       function loadUsers() {
-        API.getUsers()
+        API.getFilteredUsers()
           .then(res => 
             setUsers(res.data)
           )
@@ -18,7 +18,7 @@ function Matches(){
       };
     return (
         <div>
-        {users.map(user => <DatingCard user = {user} image = './image-assets/profile-2398782_640.png'/>)}
+        {users.map(user => <DatingCard key={user.id} user = {user} image = './image-assets/profile-2398782_640.png'/>)}
         </div>
     );
 }

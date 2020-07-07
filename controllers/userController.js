@@ -1,5 +1,6 @@
 var express = require("express");
 var db = require("../models");
+const { Op } = require("sequelize");
 
 var router = express.Router();
 
@@ -14,6 +15,18 @@ router.get("/", function(req, res) {
   //   res.render("index", hbsObject);
   // });
   db.User.findAll({
+  }).then(function(dbUser) {
+    res.json(dbUser);
+  });
+});
+
+router.get("/filtered", function({user}, res) {
+  db.User.findAll({
+    where: {
+      // [Op.or]: [
+        hobbiesInterests: user.hobbiesInterests
+      // ]
+    }
   }).then(function(dbUser) {
     res.json(dbUser);
   });

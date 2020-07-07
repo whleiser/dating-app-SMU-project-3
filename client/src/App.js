@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NoMatch from "./pages/NoMatch";
 import ThemeProvider from './components/ThemeProvider';
@@ -11,6 +11,7 @@ import CreateProfile from './pages/CreateProfile';
 import Login from './pages/Login'
 
 function App() {
+  const [user, setUser] = useState({});
   return (
     <ThemeProvider>
     <div>
@@ -22,17 +23,17 @@ function App() {
           <AboutBody></AboutBody>
           </Route>
           <Route exact path="/update">
-            <UpdateProfile />
+            <UpdateProfile user={user}/>
           </Route>
           <Route exact path="/create">
             <CreateProfile />
           </Route>
           <Route exact path="/matches">
-            <Matches />
+            <Matches user={user} />
           </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
+         <Route exact path="/login">
+            <Login setUser={setUser}/>
+          </Route> 
           <Route>
             <NoMatch />
           </Route>

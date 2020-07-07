@@ -17,6 +17,9 @@ export default {
   saveMatch: function(matchData) {
     return axios.post("/api/matches", matchData);
   },
+  getFilteredUsers: function() {
+    return axios.get("api/users/filtered");
+  },
 
   getUsers: function() {
     return axios.get("/api/users");

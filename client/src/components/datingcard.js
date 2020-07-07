@@ -24,7 +24,7 @@ return(
       }} />
       <Box px={2}>
         <Heading as='h3'>
-          {props.user.name}
+          {props.user.name} {props.user.age}
         </Heading>
         <Text fontSize={0}>
           {props.user.bio}
