@@ -19,46 +19,49 @@ import {
 
   function ProfileForm({event, nameInput, ageInput, bioInput, hobbiesInput, maleInput, femaleInput, interestFemaleInput, interestMaleInput}){
     return(
-<Box
+<Box  
   as='form'
-  onSubmit={e => event(e)}
-  py={3}>
+  onSubmit={e => event(e)}>
   <Flex mx={-2} mb={3}>
-    <Box width={2/3} px={2}>
+    <Box width={.8} px={2}  py={1} maxWidth={400}>
       <Label htmlFor='name'>Name</Label>
       <Input
         id='name'
         name='name'
-        defaultValue='enter first and last name'
+        defaultValue='Enter first and last name'
         ref={nameInput}
       />
     </Box>
-    <Box width={1/3} px={2}>
-      <Label htmlFor='location'>Age</Label>
+    <Box width={.3} px={2}  py={1} maxWidth={100}>
+      <Label htmlFor='age'>Age</Label>
       <Input
         id='age'
         name='age'
-        defaultValue='99'
+        defaultValue='18+'
         ref={ageInput}
       />
     </Box>
   </Flex>
-  <Flex mx={-2} flexWrap='wrap'>
-  <Box>
+  <Box mb={3}>
   <Label htmlFor='Bio'>Bio</Label>
   <Textarea
     id='Bio'
     name='Bio'
+    maxWidth={485}
     ref={bioInput}
+    defaultValue='Enter a short bio about yourself'
   />
-  <Box>
+  <Box mb={3}>
   <Label htmlFor='Hobbies'>Hobbies and Interests</Label>
   <Textarea
     id='Hobbies'
     name='Hobbies'
+    maxWidth={485}
     ref={hobbiesInput}
+    defaultValue='Enter a list of hobbies and interests separated by commas'
   />
-  </Box>
+  {/* <Flex mx={-2} flexWrap='wrap'> */}
+  <Text px={2} py={3} fontSize={[ 2, 3, 4 ]}>Select all that apply:</Text>
   <Box>
   <Label>
     <Checkbox
@@ -86,7 +89,7 @@ import {
       name='interestMale'
       ref={interestMaleInput}
     />
-    Interest in: Male
+    Interested in: Male
   </Label>
 </Box>
 <Box>
@@ -96,16 +99,17 @@ import {
       name='interestFemale'
       ref={interestFemaleInput}
     />
-    Interest in: Female
+    Interested in: Female
   </Label>
 </Box>
 </Box>
-    <Box>
+    <Box px={['185px',1]} py={3} ml='auto'>
       <Button>
-        Beep
+        Submit
       </Button>
     </Box>
-  </Flex>
+  {/* </Flex> */}
+  </Box>
 </Box>
     );
 }

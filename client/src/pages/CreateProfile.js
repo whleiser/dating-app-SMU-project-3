@@ -62,20 +62,19 @@ function CreateProfile(){
   color='primary'>
   Create LinkUp Profile
 </Heading>
-<Box
-  py={3}>
+<Box>
   <Flex mx={-2} mb={3}>
-    <Box width={2/3} px={2}>
+    <Box width={.6} px={2} maxWidth={310}>
       <Label htmlFor='email'>Email</Label>
       <Input
         id='email'
         name='email'
         type='email'
-        defaultValue='enter first and last name'
+        defaultValue='Enter email address'
         ref = {emailInput}
       />
     </Box>
-    <Box width={1/3} px={2}>
+    <Box width={.4} px={2} maxWidth={190}>
       <Label htmlFor='password'>Password</Label>
       <Input type='password'
         id='password'
