@@ -41,7 +41,7 @@ function Login({setUser}) {
           <button type="submit" className="btn btn-default">Login</button>
         </form>
         <br />
-        <p>Or sign up <a href="/">here</a></p>
+        <p>Or sign up <a href="/create">here</a></p>
       </div>
     </Box>
   );

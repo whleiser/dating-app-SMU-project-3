@@ -13,7 +13,7 @@ import {
 function AboutBody(){
     return (
     <Box>
-        <Box px={2}>
+        <Box px={2} mx={'auto'}>
         <Heading
         fontSize={[ 5, 6, 7 ]}
         color='primary'>

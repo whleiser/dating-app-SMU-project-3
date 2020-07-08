@@ -9,7 +9,7 @@ import {
 
 function DatingCard(props){
 return(
-<Box width={[1, .8]}>
+<Box width={[1, .5]}>
 <Card
       sx={{
         p: 1,
@@ -18,8 +18,8 @@ return(
       }}>
       <Image src={props.image} 
       sx={{
-      width: [ '50%', '25%' ],
-      height: [ '50%', '25%' ],
+      width: [ '60%', '30%' ],
+      height: [ '60%', '30%' ],
       borderRadius: 8,
       }} />
       <Box px={2}>
